@@ -14,3 +14,4 @@ The Bot works by asking a series of questions to students and helps them decide 
 5.	Click on File and then Upload the bot files.
 6.	Click on the Orange chat icon on the lower right corner to start interacting with the bot. Type Hello to start.
 
+![chatbot](/chatbot.png)
