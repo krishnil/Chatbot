@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+<category>
+  <pattern>*</pattern>
+  <template>
+      I Can't help with that. Contact our Career services.
+      <link>
+          <text>Here!</text>
+          <url>https://www.wgu.edu/career-services.html</url>
+      </link>
+  </template>
+</category>
+  
+<category>
+    <pattern>HELLO</pattern>
+    <template>
+        <random>
+            <li>Hello!</li>
+            <li>Hi!</li>
+            <li>Good to see you!</li>
+            <li>Hi there!</li>
+        </random>
+        <break/> I am CareerBot! I am here to help you choose a career in Computer Science.<break/>
+        <delay>2</delay>
+        <srai>Start</srai>
+    </template>
+</category>
+  
+<category>
+    <pattern>HI</pattern>
+    <template><srai>hello</srai></template>
+</category>
+  
+<category>
+    <pattern>MY NAME IS *</pattern>
+    <template>Hi <set name="firstname"><star/></set>
+    <condition name="firstname">
+        <li value="Krishnil">. You have the same name as my creator!</li>
+        <li>. Nice name!</li>
+    </condition>
+    </template>
+</category>
+
+  
+<category>
+  <pattern>WHAT IS MY NAME</pattern>
+  <template>
+      <condition name="firstname">
+          <li value="unknown">No idea, You havent told me your name.</li>
+          <li>Your name is <get name="firstname"/>.</li>
+      </condition>
+  </template>
+</category>
+
+
+<category>
+    <pattern>START</pattern>
+    <template>
+        Do you like Programming?
+        <reply>
+            <text>Yes!</text>
+            <postback>PROGYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>PROGNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>PROGYES</pattern>
+    <template>
+        Are you interested in developing, designing programs and writing code with programming languages such as Python, Java and C?
+        <reply>
+            <text>Yes!</text>
+            <postback>SOFTYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>SOFTNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>SOFTYES</pattern>
+    <template>
+        <delay>2</delay>
+        Great! You would make an excellent Software Engineer. Software engineers design software programs
+        and often participate in the details of their development. Computer software engineers apply engineering
+        principles and systematic methods to develop programs and operating data for computers.
+        <button>
+            <text>See Jobs</text>
+            <url>https://www.indeed.com/jobs?q=software+engineer</url>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>SOFTNO</pattern>
+    <template>
+        What about building technical front-end and/or back-end code that informs site function?
+        <reply>
+            <text>Yes!</text>
+            <postback>WEBYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>PROGNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>WEBYES</pattern>
+    <template>
+        <delay>2</delay>
+        Great! You would make an excellent Web Developer. Web developers work independently as freelancers
+        or with company teams to create websites. Depending on the job, these professionals may focus on 
+        front-end development, which involves designing sites and producing content, or back-end development, 
+        which involves writing code to make website features work. 
+        <button>
+            <text>See Jobs</text>
+            <url>https://www.indeed.com/jobs?q=web+developer</url>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>PROGNO</pattern>
+    <template>
+        Are you interested in working with databases servers and applications?
+        <reply>
+            <text>Yes!</text>
+            <postback>DATYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>DATNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>DATYES</pattern>
+    <template>
+        <delay>2</delay>
+        Great! You would make an excellent Database Administrator. Database administrators or managers
+        create and maintain databases compatible with their companies' needs. These information technology (IT) professionals
+        oversee database updates, storage, security, and troubleshooting.
+        <button>
+            <text>See Jobs</text>
+            <url>https://www.indeed.com/jobs?q=database+administrator</url>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>DATNO</pattern>
+    <template>
+        Are you interested in working with network hardware and software?
+        <reply>
+            <text>Yes!</text>
+            <postback>NETYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>NETNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>NETYES</pattern>
+    <template>
+        <delay>2</delay>
+        Great! You would make an excellent Network Administrator. Network administrators design, manage, and maintain technological networks.
+        They work within organizations and government agencies to oversee local area networks, wide area networks, network segments,
+        and other data communication systems as needed.
+        <button>
+            <text>See Jobs</text>
+            <url>https://www.indeed.com/jobs?q=network+administrator</url>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>NETNO</pattern>
+    <template>
+        Are you interested in working in cybersecurity and information security?
+        <reply>
+            <text>Yes!</text>
+            <postback>CYBYES</postback>
+        </reply>
+        <reply>
+            <text>No.</text>
+            <postback>CYBNO</postback>
+        </reply>
+    </template>
+</category>
+
+<category>
+    <pattern>CYBYES</pattern>
+    <template>
+        <delay>2</delay>
+        Great! You would make an excellent Security Analyst. Information security analysts work to secure information networks
+        and systems in many different types of organizations. They protect computer networks by monitoring for and responding to threats.
+        <button>
+            <text>See Jobs</text>
+            <url>https://www.indeed.com/jobs?q=security+analyst</url>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>BYE</pattern>
+    <template>
+        <random>
+            <li>Goodbye!</li>
+            <li>See you later!</li>
+            <li>Bye!</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>GOODBYE</pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern>THANKS</pattern>
+    <template>You're Welcome</template>
+</category>
+
+<category>
+    <pattern>THANK YOU</pattern>
+    <template><srai>THANKS</srai></template>
+</category>
+
+</aiml>
